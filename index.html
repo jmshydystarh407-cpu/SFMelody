@@ -6,109 +6,47 @@
 
 <style>
 body{
-    background-image: url("background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background:#111;
     color:white;
-    font-family:tahoma;
     text-align:center;
+    font-family:tahoma;
     padding:30px;
 }
+audio{
+    width:90%;
+    margin:15px;
 }
-
-h1{
-    font-size:40px;
-    margin-top:30px;
-}
-
-.logo{
-    font-size:60px;
-}
-
-p{
-    color:#aaa;
-}
-
-button{
-    background:#1db954;
-    color:white;
-    border:none;
-    padding:12px 30px;
-    border-radius:30px;
-    font-size:18px;
-    cursor:pointer;
-}
-
-input{
-    padding:12px;
-    border-radius:20px;
-    border:none;
-    text-align:center;
-}
-
 #site{
     display:none;
 }
-
-audio{
-    width:90%;
-    margin:20px 0;
-}
-
-.music{
-    max-width:600px;
-    margin:auto;
-}
-
-hr{
-    border:0;
-    border-top:1px solid #333;
-}
-
 </style>
+
 </head>
 
 <body>
 
 <div id="login">
-
-<div class="logo">🎧</div>
-
-<h2>SF Melody</h2>
-
-<p>رمز ورود را وارد کنید</p>
-
-<input id="pass" type="password" placeholder="Password">
-
+<h2>🔒 رمز ورود</h2>
+<input id="pass" type="password" placeholder="رمز را وارد کنید">
 <br><br>
-
-<button onclick="login()">ورود</button>
-
-<p id="error" style="color:red;"></p>
-
+<button onclick="checkPass()">ورود</button>
+<p id="error"></p>
 </div>
 
 
 <div id="site">
 
-<div class="logo">🎵</div>
-
-<h1>SF Melody</h1>
+<h1>🎵 SF Melody 🎵</h1>
 
 <p>آرشیو اختصاصی ستاره و فرانک</p>
 
-<div class="music">
-
-<h3>🎶 آهنگ اول</h3>
+<h2>آهنگ‌ها</h2>
 
 <audio controls>
 <source src="song1.mp3" type="audio/mpeg">
 </audio>
 
-<hr>
-
-<h3>🎶 آهنگ دوم</h3>
+<br><br>
 
 <audio controls>
 <source src="song2.mp3" type="audio/mpeg">
@@ -116,32 +54,21 @@ hr{
 
 </div>
 
-</div>
-<br><br>
-
-<audio controls>
-<source src="song3.mp3" type="audio/mpeg">
-</audio>
 
 <script>
+function checkPass(){
 
-function login(){
+let password = document.getElementById("pass").value;
 
-let p=document.getElementById("pass").value;
-
-if(p=="SFM_28011384!"){
-
+if(password === "SFM_28011384!"){
 document.getElementById("login").style.display="none";
 document.getElementById("site").style.display="block";
-
-}else{
-
+}
+else{
 document.getElementById("error").innerHTML="❌ رمز اشتباه است";
-
 }
 
 }
-
 </script>
 
 </body>
