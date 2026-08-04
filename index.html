@@ -5,7 +5,7 @@
 <title>SF Melody</title>
 
 <style>
-    body{
+body{
     background-image:url("background.jpg");
     background-size:cover;
     background-position:center;
@@ -14,14 +14,25 @@
     font-family:tahoma;
     text-align:center;
     padding:30px;
-    }
 }
+
 audio{
     width:90%;
     margin:15px;
 }
+
 #site{
     display:none;
+}
+
+input, button{
+    padding:10px;
+    font-size:16px;
+    border-radius:10px;
+}
+
+button{
+    cursor:pointer;
 }
 </style>
 
@@ -31,9 +42,13 @@ audio{
 
 <div id="login">
 <h2>🔒 رمز ورود</h2>
+
 <input id="pass" type="password" placeholder="رمز را وارد کنید">
+
 <br><br>
+
 <button onclick="checkPass()">ورود</button>
+
 <p id="error"></p>
 </div>
 
@@ -44,36 +59,57 @@ audio{
 
 <p>آرشیو اختصاصی ستاره و فرانک</p>
 
-<h2>آهنگ‌ها</h2>
+<h2>🎧 آهنگ‌ها</h2>
+
 
 <audio controls>
 <source src="song1.mp3" type="audio/mpeg">
 </audio>
 
+
 <br><br>
+
 
 <audio controls>
 <source src="song2.mp3" type="audio/mpeg">
 </audio>
 
+
+<br><br>
+
+
+<audio controls>
+<source src="song3.mp3" type="audio/mpeg">
+</audio>
+
+
 </div>
 
 
 <script>
+
 function checkPass(){
 
 let password = document.getElementById("pass").value;
 
 if(password === "SFM_28011384!"){
+
 document.getElementById("login").style.display="none";
+
 document.getElementById("site").style.display="block";
+
 }
+
 else{
+
 document.getElementById("error").innerHTML="❌ رمز اشتباه است";
+
 }
 
 }
+
 </script>
+
 
 </body>
 </html>
