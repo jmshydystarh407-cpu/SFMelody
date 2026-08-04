@@ -1,7 +1,74 @@
-<script>
-let pass = prompt("🔒 رمز ورود را وارد کنید:");
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>SF Melody</title>
 
-if(pass !== "SFM_28011384!"){
-    document.body.innerHTML = "<h1 style='color:red;text-align:center;margin-top:100px;'>⛔ رمز اشتباه است</h1>";
+<style>
+body{
+  background:#111;
+  color:white;
+  text-align:center;
+  font-family:tahoma;
+  padding:30px;
+}
+audio{
+  width:90%;
+  margin:15px;
+}
+#site{
+  display:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="lock">
+<h2>🔒 رمز ورود</h2>
+<input id="pass" type="password" placeholder="رمز را وارد کنید">
+<br><br>
+<button onclick="login()">ورود</button>
+</div>
+
+
+<div id="site">
+
+<h1>🎵 SF Melody 🎵</h1>
+
+<p>آرشیو اختصاصی ستاره و فرانک</p>
+
+<h2>آهنگ‌ها</h2>
+
+<audio controls>
+<source src="song1.mp3" type="audio/mpeg">
+</audio>
+
+<br><br>
+
+<audio controls>
+<source src="song2.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+
+<script>
+function login(){
+
+let password = document.getElementById("pass").value;
+
+if(password === "SFM_28011384!"){
+document.getElementById("lock").style.display="none";
+document.getElementById("site").style.display="block";
+}
+else{
+alert("❌ رمز اشتباه است");
+}
+
 }
 </script>
+
+</body>
+</html>
