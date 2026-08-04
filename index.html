@@ -6,53 +6,106 @@
 
 <style>
 body{
-    background:#111;
+    margin:0;
+    background:linear-gradient(180deg,#121212,#000);
     color:white;
-    text-align:center;
     font-family:tahoma;
+    text-align:center;
     padding:30px;
 }
 
-audio{
-    width:90%;
-    margin:15px;
+h1{
+    font-size:40px;
+    margin-top:30px;
+}
+
+.logo{
+    font-size:60px;
+}
+
+p{
+    color:#aaa;
+}
+
+button{
+    background:#1db954;
+    color:white;
+    border:none;
+    padding:12px 30px;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+input{
+    padding:12px;
+    border-radius:20px;
+    border:none;
+    text-align:center;
 }
 
 #site{
     display:none;
 }
-</style>
 
+audio{
+    width:90%;
+    margin:20px 0;
+}
+
+.music{
+    max-width:600px;
+    margin:auto;
+}
+
+hr{
+    border:0;
+    border-top:1px solid #333;
+}
+
+</style>
 </head>
 
 <body>
 
 <div id="login">
-<h2>🔒 ورود به SF Melody</h2>
 
-<input id="pass" type="password" placeholder="رمز را وارد کنید">
+<div class="logo">🎧</div>
+
+<h2>SF Melody</h2>
+
+<p>رمز ورود را وارد کنید</p>
+
+<input id="pass" type="password" placeholder="Password">
 
 <br><br>
 
-<button onclick="checkPass()">ورود</button>
+<button onclick="login()">ورود</button>
 
 <p id="error" style="color:red;"></p>
+
 </div>
 
 
 <div id="site">
 
-<h1>🎵 SF Melody 🎵</h1>
+<div class="logo">🎵</div>
+
+<h1>SF Melody</h1>
 
 <p>آرشیو اختصاصی ستاره و فرانک</p>
 
-<h2>آهنگ‌ها</h2>
+<div class="music">
+
+<h3>🎶 آهنگ اول</h3>
 
 <audio controls>
 <source src="song1.mp3" type="audio/mpeg">
 </audio>
 
-<br>
+<hr>
+
+<h3>🎶 آهنگ دوم</h3>
 
 <audio controls>
 <source src="song2.mp3" type="audio/mpeg">
@@ -60,26 +113,28 @@ audio{
 
 </div>
 
+</div>
+
 
 <script>
-function checkPass(){
 
-let password = document.getElementById("pass").value;
+function login(){
 
-if(password === "SFM_28011384!"){
+let p=document.getElementById("pass").value;
+
+if(p=="SFM_28011384!"){
 
 document.getElementById("login").style.display="none";
 document.getElementById("site").style.display="block";
 
-}
-
-else{
+}else{
 
 document.getElementById("error").innerHTML="❌ رمز اشتباه است";
 
 }
 
 }
+
 </script>
 
 </body>
