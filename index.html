@@ -5,49 +5,21 @@
 <title>SF Melody</title>
 
 <style>
-    body{
-    background-image: url("background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+body{
+    background:#111;
     color:white;
-    }
-}
-
-.logo{
-    font-size:45px;
-    font-weight:bold;
-    letter-spacing:3px;
-    margin-bottom:10px;
-}
-
-.subtitle{
-    color:#ccc;
-    font-size:18px;
-}
-
-.card{
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.2);
-    border-radius:20px;
-    padding:25px;
-    margin:25px auto;
-    max-width:500px;
-    box-shadow:0 10px 30px rgba(0,0,0,.5);
-}
-
-h2{
-    color:#ffd700;
+    text-align:center;
+    font-family:tahoma;
+    padding:30px;
 }
 
 audio{
-    width:100%;
+    width:90%;
+    margin:15px;
 }
 
-.footer{
-    margin-top:40px;
-    color:#888;
-    font-size:14px;
+#site{
+    display:none;
 }
 </style>
 
@@ -55,25 +27,32 @@ audio{
 
 <body>
 
-<div class="logo">🎵 SF Melody</div>
+<div id="login">
+<h2>🔒 ورود به SF Melody</h2>
 
-<p class="subtitle">
-آرشیو اختصاصی آهنگ‌های ستاره و فرانک
-</p>
+<input id="pass" type="password" placeholder="رمز را وارد کنید">
+
+<br><br>
+
+<button onclick="checkPass()">ورود</button>
+
+<p id="error" style="color:red;"></p>
+</div>
 
 
-<div class="card">
-<h2>🎧 آهنگ اول</h2>
+<div id="site">
+
+<h1>🎵 SF Melody 🎵</h1>
+
+<p>آرشیو اختصاصی ستاره و فرانک</p>
+
+<h2>آهنگ‌ها</h2>
 
 <audio controls>
 <source src="song1.mp3" type="audio/mpeg">
 </audio>
 
-</div>
-
-
-<div class="card">
-<h2>🎧 آهنگ دوم</h2>
+<br>
 
 <audio controls>
 <source src="song2.mp3" type="audio/mpeg">
@@ -82,9 +61,26 @@ audio{
 </div>
 
 
-<div class="footer">
-© 2026 SF Melody
-</div>
+<script>
+function checkPass(){
+
+let password = document.getElementById("pass").value;
+
+if(password === "SFM_28011384!"){
+
+document.getElementById("login").style.display="none";
+document.getElementById("site").style.display="block";
+
+}
+
+else{
+
+document.getElementById("error").innerHTML="❌ رمز اشتباه است";
+
+}
+
+}
+</script>
 
 </body>
 </html>
