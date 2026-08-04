@@ -5,38 +5,48 @@
 <title>SF Melody</title>
 
 <style>
-body {
-  background: #111;
-  color: white;
-  text-align: center;
-  font-family: Tahoma;
-  padding: 30px;
+body{
+    background:#111;
+    color:white;
+    font-family:tahoma;
+    text-align:center;
+    padding:30px;
 }
-
-audio {
-  width: 90%;
-  margin: 15px;
+audio{
+    width:90%;
+    margin:15px;
 }
 </style>
+
+<script>
+let pass = prompt("🔒 رمز ورود را وارد کنید:");
+
+if(pass !== "SFM_28011384!"){
+    document.write("<h1 style='color:red;margin-top:120px;'>⛔ رمز اشتباه است</h1>");
+    throw new Error("Wrong Password");
+}
+</script>
 
 </head>
 
 <body>
 
-<h1>🎵 SF Melody</h1>
+<h1>🎵 SF Melody 🎵</h1>
 
-<p>آرشیو آهنگ‌های ستاره و فرانک</p>
+<p>آرشیو اختصاصی ستاره و فرانک</p>
 
 <h2>آهنگ‌ها</h2>
 
 <audio controls>
-  <source src="song1.mp3" type="audio/mpeg">
+<source src="song1.mp3" type="audio/mpeg">
+مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
 </audio>
 
-<br>
+<br><br>
 
 <audio controls>
-  <source src="song2.mp3" type="audio/mpeg">
+<source src="song2.mp3" type="audio/mpeg">
+مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
 </audio>
 
 </body>
