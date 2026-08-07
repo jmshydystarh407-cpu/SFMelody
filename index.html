@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <title>SF Melody</title>
 
 <style>
+
 body{
     background-image:url("background.jpg");
     background-size:cover;
@@ -16,32 +18,46 @@ body{
     padding:30px;
 }
 
+#site{
+    display:none;
+}
+
+.box{
+    background:rgba(0,0,0,0.6);
+    padding:25px;
+    border-radius:20px;
+}
+
 audio{
     width:90%;
     margin:15px;
 }
 
-#site{
-    display:none;
-}
-
-input, button{
-    padding:10px;
+input,button{
+    padding:12px;
     font-size:16px;
     border-radius:10px;
+    border:none;
 }
 
 button{
     cursor:pointer;
 }
+
+#error{
+    color:red;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<div id="login">
-<h2>🔒 رمز ورود</h2>
+
+<div id="login" class="box">
+
+<h2>🔒 ورود به SF Melody</h2>
 
 <input id="pass" type="password" placeholder="رمز را وارد کنید">
 
@@ -50,9 +66,12 @@ button{
 <button onclick="checkPass()">ورود</button>
 
 <p id="error"></p>
+
 </div>
 
-<div id="site">
+
+
+<div id="site" class="box">
 
 <h1>🎵 SF Melody 🎵</h1>
 
@@ -60,47 +79,73 @@ button{
 
 <h2>🎧 آهنگ‌ها</h2>
 
+
 <audio controls>
 <source src="song1.mp3" type="audio/mpeg">
 </audio>
 
-<br><br>
 
 <audio controls>
 <source src="song2.mp3" type="audio/mpeg">
 </audio>
 
-<br><br>
 
 <audio controls>
 <source src="song3.mp3" type="audio/mpeg">
 </audio>
 
-<br><br>
 
 <audio controls>
 <source src="song4.mp3" type="audio/mpeg">
 </audio>
 
-<br><br>
 
 <audio controls>
 <source src="song5.mp3" type="audio/mpeg">
 </audio>
 
-<br><br>
 
 <audio controls>
 <source src="song6.mp3" type="audio/mpeg">
 </audio>
 
-<br><br>
 
 <audio controls>
 <source src="song7.mp3" type="audio/mpeg">
 </audio>
 
-<br><br>
 
-<audio controls>
-<
+</div>
+
+
+
+<script>
+
+function checkPass(){
+
+let password = document.getElementById("pass").value;
+
+
+if(password === "SFM_28011384!"){
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("site").style.display="block";
+
+
+}
+
+else{
+
+document.getElementById("error").innerHTML="❌ رمز اشتباه است";
+
+}
+
+}
+
+</script>
+
+
+</body>
+
+</html>
